@@ -298,12 +298,12 @@ export default function Course() {
   useEffect(() => {
     const fetchCourseModules = async () => {
       console.log("Fetch attempt - User:", user); // Check if this runs and if user exists
-      if (!user) return;
 
       try {
-        console.log("Making API request for user:", user.uid);
         const response = await fetch(
-          `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${user.uid}`
+          `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${
+            user?.uid || ""
+          }`
         );
         const data = await response.json();
 
@@ -675,7 +675,7 @@ export default function Course() {
             className="bg-dark-800 rounded-2xl p-8 max-w-md w-full"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold">Upgrade to Pro</h3>
+              <h3 className="text-2xl font-bold">Upgrade to Watch</h3>
               <button
                 onClick={() => setShowUpgradeModal(false)}
                 className="text-gray-400 hover:text-gray-300"
