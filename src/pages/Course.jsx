@@ -282,6 +282,7 @@ export default function Course() {
           ),
         }))
       );
+      console.log("fuck me");
 
       // Find and navigate to next lesson
       const nextLesson = findNextLesson(currentLesson.id);
