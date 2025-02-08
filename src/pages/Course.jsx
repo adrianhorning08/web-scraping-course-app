@@ -277,7 +277,7 @@ export default function Course() {
           ...module,
           lessons: module.lessons.map((lesson) =>
             lesson.id === currentLesson.id
-              ? { ...lesson, completed: true }
+              ? { ...lesson, is_completed: true }
               : lesson
           ),
         }))
@@ -301,7 +301,8 @@ export default function Course() {
 
       try {
         const response = await fetch(
-          `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${
+          // `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${
+          `http://localhost:3000/api/get-web-scraping-course-lessons?userId=${
             user?.uid || ""
           }`
         );
@@ -540,7 +541,7 @@ export default function Course() {
               </div>
 
               {/* Add completion button */}
-              {currentLesson && !currentLesson.completed && (
+              {currentLesson && !currentLesson.is_completed && (
                 <div className="mt-6 flex justify-end">
                   <button
                     onClick={handleCompleteLesson}
@@ -604,7 +605,7 @@ export default function Course() {
                         {module.locked ? (
                           <Lock className="w-5 h-5 text-gray-500" />
                         ) : module.lessons.every(
-                            (lesson) => lesson.completed
+                            (lesson) => lesson.is_completed
                           ) ? (
                           <CheckCircle className="w-5 h-5 text-green-500" />
                         ) : (
@@ -622,7 +623,7 @@ export default function Course() {
                     </div>
                     <div className="pl-8">
                       <span className="text-xs text-gray-400">
-                        {module.lessons.filter((l) => l.completed).length} of{" "}
+                        {module.lessons.filter((l) => l.is_completed).length} of{" "}
                         {module.lessons.length} lessons completed
                       </span>
                     </div>
@@ -641,7 +642,7 @@ export default function Course() {
                                 : "hover:bg-dark-700"
                             }`}
                           >
-                            {lesson.completed ? (
+                            {lesson.is_completed ? (
                               <CheckCircle className="w-5 h-5 text-green-500" />
                             ) : lesson.locked ? (
                               <Lock className="w-5 h-5 text-gray-500" />
