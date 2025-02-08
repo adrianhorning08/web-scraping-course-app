@@ -302,8 +302,7 @@ export default function Course() {
 
       try {
         const response = await fetch(
-          // `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${
-          `http://localhost:3000/api/get-web-scraping-course-lessons?userId=${
+          `https://long-running-server.onrender.com/api/get-web-scraping-course-lessons?userId=${
             user?.uid || ""
           }`
         );
