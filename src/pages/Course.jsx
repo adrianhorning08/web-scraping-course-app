@@ -258,11 +258,11 @@ export default function Course() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${await user.getIdToken()}`,
           },
           body: JSON.stringify({
             lessonId: currentLesson.id,
             userId: user.uid,
+            apiToken: user?.uid,
           }),
         }
       );
