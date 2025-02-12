@@ -296,6 +296,14 @@ export default function Course() {
     }
   };
 
+  function getCorrectEmbedUrl(loomUrl) {
+    if (loomUrl.includes("screen.studio")) {
+      return loomUrl;
+    } else {
+      return loomUrl.replace("share/", "embed/");
+    }
+  }
+
   useEffect(() => {
     const fetchCourseModules = async () => {
       console.log("Fetch attempt - User:", user); // Check if this runs and if user exists
@@ -519,7 +527,7 @@ export default function Course() {
             <div className="aspect-video bg-dark-800 rounded-xl overflow-hidden">
               {currentLesson?.loom_url ? (
                 <iframe
-                  src={currentLesson.loom_url.replace("share/", "embed/")}
+                  src={getCorrectEmbedUrl(currentLesson.loom_url)}
                   className="w-full h-full"
                   frameBorder="0"
                   allowFullScreen
