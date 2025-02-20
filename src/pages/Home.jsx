@@ -17,6 +17,7 @@ import {
   Star,
   StarHalf,
 } from "lucide-react";
+import { FaGoogle } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Hero from "../components/home/Hero";
@@ -217,7 +218,7 @@ export default function Home() {
               { name: "Zillow", icon: Building2 },
               { name: "Google Maps", icon: MapPin },
               { name: "Amazon", icon: ShoppingCart },
-              { name: "Google", icon: Google },
+              { name: "Google", icon: FaGoogle },
               { name: "ESPN", icon: Trophy },
               { name: "And More!", icon: Plus },
             ].map((site, index) => (
