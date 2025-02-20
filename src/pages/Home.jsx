@@ -217,7 +217,7 @@ export default function Home() {
               { name: "Zillow", icon: Building2 },
               { name: "Google Maps", icon: MapPin },
               { name: "Amazon", icon: ShoppingCart },
-              { name: "Realtor", icon: Building2 },
+              { name: "Google", icon: Google },
               { name: "ESPN", icon: Trophy },
               { name: "And More!", icon: Plus },
             ].map((site, index) => (

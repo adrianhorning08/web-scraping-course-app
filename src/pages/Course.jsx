@@ -95,23 +95,21 @@ function UserAvatar({ user }) {
   );
 }
 
-// const ANNOUNCEMENTS = [
-const ANNOUNCEMENTS = [];
-//   {
-//     id: 1,
-//     date: "2024-02-15",
-//     title: "New Module Released!",
-//     content:
-//       "Advanced LinkedIn Scraping techniques module is now available. Check it out in the Advanced Topics section!",
-//   },
-//   {
-//     id: 2,
-//     date: "2024-02-10",
-//     title: "Live Q&A Session",
-//     content:
-//       "Join us this Friday at 2 PM EST for a live Q&A session about web scraping best practices.",
-//   },
-// ];
+const ANNOUNCEMENTS = [
+  {
+    id: 1,
+    date: "2025-02-21",
+    title: "New Lesson Released!",
+    content:
+      "I found a way to scrape Google Search WITHOUT the need for a browser. Check it out!",
+  },
+  {
+    id: 2,
+    date: "2025-02-21",
+    title: "New Lesson Released!",
+    content: "Created a lesson on how to scrape Tiktok profile and video data.",
+  },
+];
 
 // TODO: and need to keep track if the user has paid
 // TODO: implement search
