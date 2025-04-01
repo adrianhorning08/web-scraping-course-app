@@ -18,7 +18,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { createCheckoutSession } from "../api/stripe";
 
-const BASE_PRICE = 247; // Define base price as a constant
+const BASE_PRICE = 1000; // Define base price as a constant
 
 const getPPPDiscount = (countryCode) => {
   // PPP-based discount tiers (percentages)
